@@ -2,11 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { TextField, FormGroup, Button, FormControl } from "@material-ui/core";
+import { UserLoginData } from "../../types";
 
-type UserLoginData = {
-  email: string;
-  password: string;
-};
 type LoginFormProps = {
   onSubmit: (data: UserLoginData) => void;
 };
