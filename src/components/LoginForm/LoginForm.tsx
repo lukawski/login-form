@@ -30,7 +30,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           type="email"
           label="Email"
           margin="dense"
-          innerRef={register()}
+          inputRef={register()}
           error={!!errors.email}
           helperText={errors.email?.message}
         />
@@ -40,7 +40,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           type="password"
           label="Password"
           margin="dense"
-          innerRef={register()}
+          inputRef={register()}
           error={!!errors.password}
           helperText={errors.password?.message}
         />
