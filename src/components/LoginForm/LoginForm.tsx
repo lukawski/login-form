@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { TextField, FormGroup } from "@material-ui/core";
+import { TextField, FormGroup, Button, FormControl } from "@material-ui/core";
 
 type UserLoginData = {
   email: string;
@@ -44,7 +44,17 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           error={!!errors.password}
           helperText={errors.password?.message}
         />
-        <input type="submit" />
+        <FormControl margin="normal">
+          <Button
+            variant="contained"
+            type="submit"
+            size="small"
+            color="primary"
+            disabled={!!(errors.email || errors.password)}
+          >
+            Sign In
+          </Button>
+        </FormControl>
       </FormGroup>
     </form>
   );
