@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@material-ui/core";
-import LoginForm from "./components/LoginForm/LoginForm";
+import SignIn from "./components/SignIn/SingIn";
 
 const Wrapper = styled("div")({
   height: "100%",
@@ -13,7 +13,7 @@ const Wrapper = styled("div")({
 function App() {
   return (
     <Wrapper>
-      <LoginForm onSubmit={(data) => console.log(data)} />
+      <SignIn />
     </Wrapper>
   );
 }
