@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { TextField, FormGroup } from "@material-ui/core";
 
 type UserLoginData = {
   email: string;
@@ -21,16 +22,30 @@ function LoginForm({ onSubmit }: LoginFormProps) {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <input name="email" type="email" ref={register()} />
-        <p>{errors.email?.message}</p>
-      </div>
-      <div>
-        <input name="password" type="password" ref={register()} />
-        <p>{errors.password?.message}</p>
-      </div>
-      <input type="submit" />
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <FormGroup>
+        <TextField
+          required
+          name="email"
+          type="email"
+          label="Email"
+          margin="dense"
+          innerRef={register()}
+          error={!!errors.email}
+          helperText={errors.email?.message}
+        />
+        <TextField
+          required
+          name="password"
+          type="password"
+          label="Password"
+          margin="dense"
+          innerRef={register()}
+          error={!!errors.password}
+          helperText={errors.password?.message}
+        />
+        <input type="submit" />
+      </FormGroup>
     </form>
   );
 }
