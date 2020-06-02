@@ -19,7 +19,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate data-testid="signInForm">
       <FormGroup>
         <TextField
           required

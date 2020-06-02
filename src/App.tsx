@@ -24,13 +24,18 @@ function App() {
 
   return (
     <Wrapper>
-      {!username && (
+      {!(username || errorMessage) && (
         <SignIn
           onSignInSuccess={onSignInSucces}
           onSignInError={onSignInError}
         />
       )}
       {username && <Typography variant="h6">Hello {username}</Typography>}
+      {errorMessage && (
+        <Typography variant="h6" color="error">
+          {errorMessage}
+        </Typography>
+      )}
     </Wrapper>
   );
 }
