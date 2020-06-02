@@ -7,7 +7,13 @@ import {
 export default async function signIn(
   credentials: UserLoginData
 ): Promise<[SignInErrorResponse | null, SignInSuccessResposne | null]> {
+  const shouldThrow = Math.round(Math.random());
+
   try {
+    if (shouldThrow) {
+      throw Error("Random error");
+    }
+
     const response = await fetch(
       "http://www.mocky.io/v2/5ed56f1a340000540006d2ba"
     );

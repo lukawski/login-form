@@ -1,5 +1,10 @@
 import signIn from "../signIn";
 
+let mathCopy = Object.create(global.Math);
+beforeAll(() => {
+  global.Math.random = () => 0.4;
+});
+
 beforeEach(() => {
   fetchMock.resetMocks();
 });
@@ -23,4 +28,8 @@ test("returns error data when sign in fails", async () => {
     status: 401,
     message: "The email/password combination used was not found on the system.",
   });
+});
+
+afterAll(() => {
+  global.Math = mathCopy;
 });
