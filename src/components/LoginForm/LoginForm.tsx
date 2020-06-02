@@ -23,6 +23,7 @@ function LoginForm({ onSubmit }: LoginFormProps) {
       <FormGroup>
         <TextField
           required
+          id="email"
           name="email"
           type="email"
           label="Email"
@@ -30,12 +31,13 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           inputRef={register()}
           error={!!errors.email}
           helperText={errors.email?.message}
-          inputProps={{
-            "data-testid": "emailInput",
+          InputLabelProps={{
+            htmlFor: "email",
           }}
         />
         <TextField
           required
+          id="password"
           name="password"
           type="password"
           label="Password"
@@ -43,8 +45,8 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           inputRef={register()}
           error={!!errors.password}
           helperText={errors.password?.message}
-          inputProps={{
-            "data-testid": "passwordInput",
+          InputLabelProps={{
+            htmlFor: "password",
           }}
         />
         <FormControl margin="normal">

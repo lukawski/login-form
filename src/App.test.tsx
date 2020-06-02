@@ -14,12 +14,12 @@ beforeEach(() => {
 test("lets user sign in, then when signed succesfully displays username", async () => {
   fetchMock.mockResponse(JSON.stringify({ username: "Fake Username" }));
 
-  const { getByText, getByTestId, queryByTestId } = render(<App />);
+  const { getByText, getByLabelText, queryByTestId } = render(<App />);
 
-  const emailInput = getByTestId("emailInput");
+  const emailInput = getByLabelText("Email *");
   fireEvent.change(emailInput, { target: { value: "email@email.com" } });
 
-  const passwordInput = getByTestId("passwordInput");
+  const passwordInput = getByLabelText("Password *");
   fireEvent.change(passwordInput, { target: { value: "testpassword" } });
 
   const signInButton = getByText("Sign In");
@@ -37,12 +37,12 @@ test("lets user sign in, then when signed succesfully displays username", async 
 test("lets user sign in and when error occurs displays error", async () => {
   fetchMock.mockReject();
 
-  const { getByText, getByTestId, queryByTestId } = render(<App />);
+  const { getByText, getByLabelText, queryByTestId } = render(<App />);
 
-  const emailInput = getByTestId("emailInput");
+  const emailInput = getByLabelText("Email *");
   fireEvent.change(emailInput, { target: { value: "email@email.com" } });
 
-  const passwordInput = getByTestId("passwordInput");
+  const passwordInput = getByLabelText("Password *");
   fireEvent.change(passwordInput, { target: { value: "testpassword" } });
 
   const signInButton = getByText("Sign In");
