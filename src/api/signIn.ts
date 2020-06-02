@@ -1,12 +1,8 @@
-import { UserLoginData } from "../types";
-
-type SignInSuccessResposne = {
-  username: string;
-};
-type SignInErrorResponse = {
-  status: number;
-  message: string;
-};
+import {
+  UserLoginData,
+  SignInErrorResponse,
+  SignInSuccessResposne,
+} from "../types";
 
 export default async function signIn(
   credentials: UserLoginData
