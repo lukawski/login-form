@@ -5,8 +5,11 @@ import signIn from "../../api/signIn";
 import { UserLoginData, onSignInSucces, onSignInError } from "../../types";
 
 const Wrapper = styled(Paper)({
-  width: "40%",
+  width: "90%",
   padding: "15px 30px",
+  "@media (min-width: 769px)": {
+    width: "40%",
+  },
 });
 
 type SingInProps = {
