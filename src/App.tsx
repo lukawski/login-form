@@ -22,8 +22,6 @@ function App() {
   const onSignInError: onSignInErrorSignature = ({ message }) =>
     setErrorMessage(message);
 
-  console.log(username);
-
   return (
     <Wrapper>
       {!username && (

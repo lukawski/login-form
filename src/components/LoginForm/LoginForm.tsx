@@ -30,6 +30,9 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           inputRef={register()}
           error={!!errors.email}
           helperText={errors.email?.message}
+          inputProps={{
+            "data-testid": "emailInput",
+          }}
         />
         <TextField
           required
@@ -40,6 +43,9 @@ function LoginForm({ onSubmit }: LoginFormProps) {
           inputRef={register()}
           error={!!errors.password}
           helperText={errors.password?.message}
+          inputProps={{
+            "data-testid": "passwordInput",
+          }}
         />
         <FormControl margin="normal">
           <Button
